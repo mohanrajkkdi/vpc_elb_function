@@ -7,27 +7,23 @@ variable "vpc_name" {
 }
 
 variable "public_subnet_cidr_block" {
-  type = list(string)
-  default = [ "10.0.2.0/23", "10.0.4.0/23" ]
+  type    = list(string)
+  default = ["10.0.2.0/23", "10.0.4.0/23"]
 }
 
 variable "public_subnet_az" {
-  type = list(string)
-  default = [ "us-west-2a", "us-west-2b" ]
+  type    = list(string)
+  default = ["us-west-2a", "us-west-2b"]
 }
 
 variable "private_subnet_cidr_block" {
-  type = list(string)
-  default = [ "10.0.8.0/22", "10.0.12.0/23" ]
+  type    = list(string)
+  default = ["10.0.8.0/22", "10.0.12.0/23"]
 }
 
 variable "private_subnet_az" {
-  type = list(string)
-  default = [ "us-west-2a", "us-west-2b" ]
-}
-
-variable "ami_id" {
-  default = "ami-01bd2ef32319dd280"
+  type    = list(string)
+  default = ["us-west-2a", "us-west-2b"]
 }
 
 variable "instance_type" {
