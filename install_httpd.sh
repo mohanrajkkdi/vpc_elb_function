@@ -1,7 +1,7 @@
-#! /bin/bash
-sudo yum update
-sudo yum install httpd
-sudo yum install java
-echo "<h2>Webserver from terra..</h2>" > /var/www/public_html
-sudo systemctl restart httpd
+#!/bin/bash
+sudo yum update -y
+sudo yum install httpd -y
+sudo yum install java -y
+echo "<h2>Webserver from terra..</h2>" | sudo tee /var/www/html/index.html
+sudo systemctl start httpd
 sudo systemctl enable httpd

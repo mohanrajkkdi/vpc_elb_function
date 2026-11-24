@@ -10,6 +10,8 @@ resource "aws_elb" "terra_elb" {
     lb_protocol = "http"
   }
 
+  #Load balancer sends http request to /index.html on port 80 of each instances every 30 seconds
+  #It expects HTTP 200 ok response within 3 seconds. If two consecutive health checks fail, the instance marked as OutOfService
   health_check {
     healthy_threshold = 2
     unhealthy_threshold = 2
